@@ -27,7 +27,7 @@ For lazy.nvim:
 
 >
   {
-    "your-name/bareline.nvim",
+    "atherisa/bareline.nvim",
     config = function()
       require("bareline").setup()
     end,
@@ -117,6 +117,3 @@ indicator.right.text~
 
 indicator.right.hl~
   Highlight group used for the right overflow indicator.
-
-==============================================================================
- vim:tw=78:ts=8:ft=help:norl:

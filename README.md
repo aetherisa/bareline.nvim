@@ -7,7 +7,7 @@ A minimal Neovim buffer indicator for users who do not want a full bufferline. *
 |---|---|
 | ![Multiple Buffers](./assets/screenshot-1.png) | ![Single Buffer](./assets/screenshot-2.png) |
 
-**Why?**
+## Why
 
 * File names are useful, but not always worth the space.
 * A crowded bufferline is often harder to scan than a picker.

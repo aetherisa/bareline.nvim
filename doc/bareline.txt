@@ -1,0 +1,122 @@
+*bareline.nvim*              Minimal Neovim buffer indicator
+
+==============================================================================
+CONTENTS                                                   *bareline-contents*
+
+1. Introduction ..................... |bareline-introduction|
+2. Installation ..................... |bareline-installation|
+3. Setup ............................ |bareline-setup|
+4. Configuration .................... |bareline-configuration|
+5. Options .......................... |bareline-options|
+
+==============================================================================
+INTRODUCTION                                           *bareline-introduction*
+
+bareline.nvim is a minimal Neovim buffer indicator for users who do not want a
+full bufferline.
+
+It shows no filenames, icons, diagnostics, Git status, close buttons, or extra
+metadata. It only shows simple buffer indicators.
+
+==============================================================================
+INSTALLATION                                           *bareline-installation*
+
+Install with your plugin manager.
+
+For lazy.nvim:
+
+>
+  {
+    "your-name/bareline.nvim",
+    config = function()
+      require("bareline").setup()
+    end,
+  }
+<
+
+==============================================================================
+SETUP                                                         *bareline-setup*
+
+Basic setup:
+
+>
+  require("bareline").setup()
+<
+
+Custom setup:
+
+>
+  require("bareline").setup({
+    layout = {
+      min_width = 20,
+      scrolloff = 1,
+      gap = 1,
+    },
+    buffer = {
+      active = {
+        char = "-",
+        hl = "DiagnosticFloatingOk",
+      },
+      inactive = {
+        char = "-",
+        hl = "LineNr",
+      },
+    },
+    indicator = {
+      left = {
+        text = "<< ",
+        hl = "LineNr",
+      },
+      right = {
+        text = " >>",
+        hl = "LineNr",
+      },
+    },
+  })
+<
+
+==============================================================================
+CONFIGURATION                                       *bareline-configuration*
+
+bareline.nvim can be configured through require("bareline").setup().
+
+See |bareline-options| for all available options.
+
+==============================================================================
+OPTIONS                                                   *bareline-options*
+
+layout.min_width~
+  Minimum width of each buffer indicator segment.
+
+layout.scrolloff~
+  Number of buffer indicators kept around the active buffer before scrolling.
+
+layout.gap~
+  Number of spaces between buffer indicators.
+
+buffer.active.char~
+  Character used to draw the active buffer indicator.
+
+buffer.active.hl~
+  Highlight group used for the active buffer indicator.
+
+buffer.inactive.char~
+  Character used to draw inactive buffer indicators.
+
+buffer.inactive.hl~
+  Highlight group used for inactive buffer indicators.
+
+indicator.left.text~
+  Text shown on the left when hidden buffers exist before the visible range.
+
+indicator.left.hl~
+  Highlight group used for the left overflow indicator.
+
+indicator.right.text~
+  Text shown on the right when hidden buffers exist after the visible range.
+
+indicator.right.hl~
+  Highlight group used for the right overflow indicator.
+
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
